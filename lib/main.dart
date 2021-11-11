@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:tonal_assessment/ui/metric_bubble.dart';
+import 'package:tonal_assessment/ui/metric_bubble_display.dart';
 import 'package:tonal_assessment/ui/new_metric_form.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(App());
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,12 +12,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: Main(),
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,9 +25,16 @@ class MyHomePage extends StatelessWidget {
         title: const Text('Tonal Assessment'),
       ),
       body: Container(
-          child: Column(
-        children: [MetricBubble(), NewMetricForm()],
-      )),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 50,
+            ),
+            MetricBubbleDisplay(),
+            NewMetricForm(),
+          ],
+        ),
+      ),
     );
   }
 }
