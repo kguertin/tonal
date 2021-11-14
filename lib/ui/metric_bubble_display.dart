@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tonal_assessment/models/metric_bubble.dart';
-import 'package:tonal_assessment/styles.dart';
+import 'package:tonal_assessment/ui/metric_bubble.dart';
 
 class MetricBubbleDisplay extends StatelessWidget {
   MetricBubbleDisplay({Key? key}) : super(key: key);
@@ -10,31 +10,9 @@ class MetricBubbleDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.all(10.0),
       child: Row(
-        children: metric_bubbles
-            .map(
-              (metric) => Container(
-                padding: const EdgeInsets.all(20.0),
-                decoration: bubbleBoxDecoration,
-                child: Column(
-                  children: [
-                    Text(
-                      metric.label,
-                      style: labelTextStyle,
-                    ),
-                    Text(
-                      "${metric.weight}",
-                      style: weightTextStyle,
-                    ),
-                    Text(
-                      metric.unit,
-                      style: unitTextStyle,
-                    )
-                  ],
-                ),
-              ),
-            )
-            .toList(),
+        children: metric_bubbles.map((metric) => MetricBubbleItem(metric: metric)).toList(),
       ),
     );
   }
