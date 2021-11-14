@@ -1,16 +1,17 @@
 # tonal_assessment
 
-A new Flutter project.
+A new Flutter project. Built and tested on for Android Emulator
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Run `flutter run` to start project. Project build and tested on a Pixel 4 emulator but should also work for iOS, might be some slight style issues.
 
-A few resources to get you started if this is your first Flutter project:
+## Assumptions
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+The one question I had was if this should be a moble app build in flutter or a flutter web app. All the examples of accepted technologies were mobile (React Native, Android, Swift) so I assumed that it shhould be a mobile application.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+I wanted to use the provided styles but they were much too big for a mobile screen, so I added a media query to modify the base styles based on a smaller `(<= 900)` screen size. I used this to modify font size and preserved the rest of the styles. This approach should allow for the reuse of this widget for the full sized web app where we can show the larger component.
+
+## Future Steps
+
+If adding aditional features I would like to add a way to remove an entry. Additionally users might want to edit the entry. We could build this on the existing widget and form being used.
