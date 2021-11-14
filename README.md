@@ -14,4 +14,4 @@ I wanted to use the provided styles but they were much too big for a mobile scre
 
 ## Future Steps
 
-If adding aditional features I would like to add a way to remove an entry. Additionally users might want to edit the entry. We could build this on the existing widget and form being used.
+If adding aditional features I would like to add a way to remove an entry. Additionally users might want to edit the entry. We could build this on the existing widget and form being used and the code has be written in such a way that we could add these changes quite quickly.
