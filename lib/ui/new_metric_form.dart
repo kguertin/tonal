@@ -12,20 +12,27 @@ class NewMetricForm extends StatelessWidget {
     final weightInputController = TextEditingController();
 
     return Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: Column(
-      children: [
-        TextFormField(
-          controller: labelInputController,
-        ),
-        TextFormField(
-          controller: weightInputController,
-          keyboardType: TextInputType.number,
-        ),
-        ElevatedButton(
-          onPressed: () => addMetricBubble(labelInputController.text, weightInputController.text),
-          child: const Text("Add Workout"),
-        )
-      ],
-    ));
+          children: [
+            TextFormField(
+              controller: labelInputController,
+              decoration: const InputDecoration(label: Text("Label")),
+            ),
+            TextFormField(
+              controller: weightInputController,
+              keyboardType: TextInputType.number,
+              decoration: const InputDecoration(label: Text("Weight")),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 10.0),
+              child: ElevatedButton(
+                onPressed: () =>
+                    addMetricBubble(labelInputController.text, weightInputController.text),
+                child: const Text("Add Workout"),
+              ),
+            )
+          ],
+        ));
   }
 }

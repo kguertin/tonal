@@ -11,7 +11,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Tonal Assessment',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
       ),
       home: Main(),
     );

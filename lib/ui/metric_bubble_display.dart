@@ -10,8 +10,11 @@ class MetricBubbleDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(10.0),
-      child: Row(
-        children: metricBubbles.map((metric) => MetricBubbleItem(metric: metric)).toList(),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: metricBubbles.map((metric) => MetricBubbleItem(metric: metric)).toList(),
+        ),
       ),
     );
   }
